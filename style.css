@@ -1,0 +1,168 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --background-light: #f8f9fa;
+    --border-color: #e0e4e8;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f0f2f5;
+    color: var(--primary-color);
+}
+
+.markdown-container {
+    max-width: 1400px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.markdown-wrapper {
+    display: flex;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+.input-panel,
+.preview-panel {
+    width: 50%;
+    padding: 2rem;
+    position: relative;
+}
+
+.input-panel {
+    background-color: var(--background-light);
+    border-right: 1px solid var(--border-color);
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+.panel-header h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+#markdown-input {
+    width: 100%;
+    min-height: 500px;
+    max-height: 600px;
+    resize: vertical;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 1rem;
+    font-family: 'Fira Code', 'Courier New', monospace;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    background-color: white;
+    transition: border-color 0.3s ease;
+}
+
+#markdown-input:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.control-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1rem;
+}
+
+#clear-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+#clear-btn:hover {
+    background-color: #c0392b;
+    transform: translateY(-2px);
+}
+
+.preview-panel {
+    background-color: white;
+    overflow-y: auto;
+}
+
+#preview {
+    padding: 1rem;
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+/* Enhanced Markdown Styling */
+#preview h1 { 
+    font-size: 2rem; 
+    color: var(--primary-color); 
+    border-bottom: 1px solid var(--border-color); 
+    padding-bottom: 0.5rem; 
+    margin-bottom: 1rem;
+}
+#preview h2 { font-size: 1.5rem; color: #34495e; }
+#preview h3 { font-size: 1.2rem; color: #2980b9; }
+#preview strong { font-weight: 700; color: #2c3e50; }
+#preview em { font-style: italic; color: #7f8c8d; }
+#preview a { 
+    color: var(--secondary-color); 
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+#preview a:hover { 
+    text-decoration: underline; 
+    color: #2980b9;
+}
+#preview ul, #preview ol { 
+    margin-left: 1.5rem; 
+    margin-bottom: 1rem;
+}
+#preview code { 
+    background-color: #f4f4f6; 
+    padding: 0.2rem 0.4rem; 
+    border-radius: 3px; 
+    font-family: 'Fira Code', monospace;
+    font-size: 0.85rem;
+    color: #e74c3c;
+}
+#preview pre {
+    background-color: #f8f9fa;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 1rem;
+    overflow-x: auto;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 968px) {
+    .markdown-wrapper {
+        flex-direction: column;
+    }
+    .input-panel, 
+    .preview-panel {
+        width: 100%;
+    }
+}

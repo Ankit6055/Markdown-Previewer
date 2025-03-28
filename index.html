@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown Previewer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="markdown-container">
+        <div class="markdown-wrapper">
+            <div class="input-panel">
+                <div class="panel-header">
+                    <h2>Markdown Input</h2>
+                </div>
+                <textarea id="markdown-input" placeholder="Type your markdown here..."></textarea>
+                <div class="control-actions">
+                    <button id="clear-btn">Clear</button>
+                </div>
+            </div>
+            <div class="preview-panel">
+                <div class="panel-header">
+                    <h2>Live Preview</h2>
+                </div>
+                <div id="preview"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
